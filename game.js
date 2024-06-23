@@ -1,4 +1,4 @@
-import {update as updateSnake, draw as drawSnake, snake_speed,getSnakeHead,snakeIntersection} from './snake.js';
+import {update as updateSnake,draw as drawSnake, snake_speed,getSnakeHead,snakeIntersection} from './snake.js';
 import {update as updateFood, draw as drawFood} from './food.js'
 import { outSideGrid } from './grid.js';
 
@@ -34,7 +34,7 @@ window.requestAnimationFrame(main);
 
 function update(){
     updateSnake()
-    updateFood()
+    updateFood();
     checkDeath()
 
 }
