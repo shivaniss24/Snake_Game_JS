@@ -1,19 +1,18 @@
-let lastRenderTime=0;
-const snake_speed=2;
-function main(currentTime){
-    // window.requestAnimationFrame(main);
-    const secondsSinceLastRender=(currentTime-lastRenderTime);
-    window.requestAnimationFrame(main);
-  
-    // console.log(secondsSinceLastRender);
+export const snake_speed=1;
 
-    if(secondsSinceLastRender<1/snake_speed)return 
-    console.log('Render');
-    lastRenderTime=currentTime;
+const snakeBody=[{x:11, y:11}]
+export function update(){
+    console.log('update snake')
 
-    update()
-    draw()
 }
 
+export function draw(gameBoard){
+   snakeBody.forEach(segment=>{
+    const snakeElement=document.createElement('div')
+    snakeElement.style.gridRowStart=segment.y
+    snakeElement.style.gridColumnStart=segment.x
+    snakeElement.classList.add('snake')
+    gameBoard.appendChild(snakeElement);
 
-window.requestAnimationFrame(main);
+   })
+}
